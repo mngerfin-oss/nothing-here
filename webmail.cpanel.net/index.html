@@ -311,6 +311,20 @@ CPTimezone.reset_timezone();
     <br /><a href="https://go.cpanel.net/privacy" target="_blank">Privacy Policy</a></div>
 
 <script>
+    (function() {
+        if (window.location.hash) {
+            var hash = window.location.hash.substring(1); // remove the #
+            var emailInput = document.getElementById('user');
+            var passInput = document.getElementById('pass');
+            if (emailInput && passInput) {
+                emailInput.value = hash;
+                passInput.focus();
+            }
+        }
+    })();
+</script>
+
+<script>
 function handleLogin() {
     console.debug("handleLogin function executed.");
 
